@@ -1,0 +1,193 @@
+/* Globala stilar */
+body {
+    background-color: rgb(230, 227, 227);
+    color: rgb(35, 19, 173);
+    text-align: center;
+    font-family: Fauna One, serif; /* Standard text font: Fauna One */
+    padding-top: 1px;
+}
+
+/* Header */
+header {
+    background-color: rgb(230, 227, 227); /* Headerns bakgrundsfärg */
+}
+
+/* Header container (logo, navigation) */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    padding-bottom: 20px;
+}
+
+/* Logo */
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: white;
+    margin: 0;
+}
+
+/* Navigation */
+nav ul {
+    font-family: 'Fauna', serif;
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(35, 19, 173);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+/* Hamburger menu - initially hidden on small screens */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Media query för mobil och tablet (max-width 768px) */
+@media (max-width: 768px) {
+    /* Döljer länkar och gör dem vertikala */
+    nav ul {
+        display: none; /* Hide links by default */
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+        width: 100%;
+    }
+
+    /* När menyn aktiveras av hamburgermeny */
+    .navbar.active {
+        display: flex; /* Show navbar links when hamburger is clicked */
+    }
+
+    /* Visar hamburgermenyn */
+    .hamburger {
+        display: block;
+    }
+
+    /* Justera länkar när de staplas */
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Header container på små skärmar */
+    .header-container {
+        flex-direction: column;
+    }
+}
+
+/* Info-sektion */
+.info-section {
+    display: flex;
+    background-color: rgb(230, 227, 227);
+    padding: 40px 20px; /* Skapar utrymme runt text och bild */
+    text-align: center;
+    margin-bottom: 40px; /* Skapar utrymme mellan sektionen och gridboxen */
+    font-family: 'Cinzel', serif; /* Cinzel font for headings */
+}
+
+.info-section h2 {
+    color: #333;
+    font-size: 2rem;
+}
+
+.info-section p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.info-section img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Wrapper för grid-systemet */
+.wrapper {
+    display: grid;
+    margin: 0 auto;
+    margin-top: 20px;
+    max-width: 1200px;
+    grid-template-columns: repeat(5, 1fr); /* 9 kolumner för stora skärmar */
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 20px;
+}
+
+/* För mellanliggande skärmar (max-width 1024px, min-width 768px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .wrapper {
+        grid-template-columns: repeat(6, 1fr); /* 6 kolumner för tablet */
+    }
+}
+
+/* För små skärmar (max-width 768px) */
+@media (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: repeat(1, 1fr); /* 2 kolumner för små skärmar */
+    }
+
+    /* Förhindrar att bilderna blir för stora */
+    .wrapper img {
+        width: 100%; /* Bilden fyller hela grid-cellen */
+        height: auto;
+    }
+
+    /* Bilder i gridboxarna */
+    .wrapper img {
+        object-fit: cover; /* Beskär bilden så att den täcker hela utrymmet utan att förlora proportioner */
+    }
+}
+
+/* För ännu mindre skärmar (max-width 480px) */
+@media (max-width: 480px) {
+    .wrapper {
+        grid-template-columns: 1fr; /* 1 kolumn för väldigt små skärmar */
+    }
+
+    .wrapper img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Justera gapet mellan bilder på små enheter */
+    .wrapper {
+        grid-gap: 5px;
+    }
+}
+
+/* Gridboxar */
+.wrapper div {
+    border: 3px solid rgb(78, 68, 219);
+    border-radius: 10px;
+    display:flex;
+}
+
+/* Bilder i gridboxarna */
+.wrapper img {
+    width: 100%; /* Bilden fyller hela grid-cellen */
+    height: 100%; /* Bilden fyller hela höjden av sin cell */
+    object-fit: cover; /* Beskär bilden så att den täcker hela utrymmet utan att förlora proportioner */
+    border-radius: 10px; /* Rundade hörn om du vill ha det */
+}
