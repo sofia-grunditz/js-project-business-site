@@ -1,193 +1,85 @@
-/* Globala stilar */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
-    background-color: rgb(230, 227, 227);
-    color: rgb(35, 19, 173);
-    text-align: center;
-    font-family: Fauna One, serif; /* Standard text font: Fauna One */
-    padding-top: 1px;
+  background-color: wheat;
+  color: #FFFFFF;
+  font-family: 'Montserrat';
+  margin-top: 10px;
 }
 
-/* Header */
 header {
-    background-color: rgb(230, 227, 227); /* Headerns bakgrundsfärg */
+  background-image: linear-gradient(rgba(211, 202, 121, 0.5), rgba(0, 0, 0, 0.5)), url("https://64.media.tumblr.com/bea9bf33d176b34345afa82bf20bdf20/tumblr_onxp28pqlh1qcdynfo1_540.jpg");
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
 }
 
-/* Header container (logo, navigation) */
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
+section {
     margin: 0 auto;
-    padding: 0 20px;
-    padding-bottom: 20px;
-}
-
-/* Logo */
-.logo {
-    font-family: 'Cinzel', serif;
-    font-size: 2rem;
-    color: white;
-    margin: 0;
-}
-
-/* Navigation */
-nav ul {
-    font-family: 'Fauna', serif;
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: rgb(35, 19, 173);
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-
-nav ul li a:hover {
-    color: #FFD700;
-}
-
-/* Hamburger menu - initially hidden on small screens */
-.hamburger {
-    display: none;
-    font-size: 30px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-/* Media query för mobil och tablet (max-width 768px) */
-@media (max-width: 768px) {
-    /* Döljer länkar och gör dem vertikala */
-    nav ul {
-        display: none; /* Hide links by default */
-        flex-direction: column;
-        text-align: center;
-        padding: 0;
-        width: 100%;
-    }
-
-    /* När menyn aktiveras av hamburgermeny */
-    .navbar.active {
-        display: flex; /* Show navbar links when hamburger is clicked */
-    }
-
-    /* Visar hamburgermenyn */
-    .hamburger {
-        display: block;
-    }
-
-    /* Justera länkar när de staplas */
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    /* Header container på små skärmar */
-    .header-container {
-        flex-direction: column;
-    }
-}
-
-/* Info-sektion */
-.info-section {
-    display: flex;
-    background-color: rgb(230, 227, 227);
-    padding: 40px 20px; /* Skapar utrymme runt text och bild */
+    padding: 2rem;
+  }
+  
+  h1 {
     text-align: center;
-    margin-bottom: 40px; /* Skapar utrymme mellan sektionen och gridboxen */
-    font-family: 'Cinzel', serif; /* Cinzel font for headings */
-}
+    font-weight: 200;
+    font-size: 36px;
+    margin-bottom: 3rem;
+  }
 
-.info-section h2 {
-    color: #333;
-    font-size: 2rem;
-}
-
-.info-section p {
-    font-size: 1.2rem;
-    color: #666;
-    max-width: 800px;
-    margin: 0 auto 20px;
-}
-
-.info-section img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Wrapper för grid-systemet */
-.wrapper {
-    display: grid;
-    margin: 0 auto;
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     margin-top: 20px;
-    max-width: 1200px;
-    grid-template-columns: repeat(5, 1fr); /* 9 kolumner för stora skärmar */
-    grid-auto-rows: minmax(100px, auto);
-    grid-gap: 20px;
+    flex-wrap: wrap;  
 }
 
-/* För mellanliggande skärmar (max-width 1024px, min-width 768px) */
-@media (max-width: 1024px) and (min-width: 768px) {
-    .wrapper {
-        grid-template-columns: repeat(6, 1fr); /* 6 kolumner för tablet */
-    }
+.item {
+    text-align: center;
+    flex: 1 1 300px; 
+    margin-bottom: 20px;
 }
 
-/* För små skärmar (max-width 768px) */
+.item img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 8px;
+}
+
+.item p {
+    font-size: 12px;
+    color: darkslateblue;
+    margin-top: 10px;
+}
 @media (max-width: 768px) {
-    .wrapper {
-        grid-template-columns: repeat(1, 1fr); /* 2 kolumner för små skärmar */
+    .card-container {
+      flex-direction: column;  /* Gör så att korten staplas vertikalt på små skärmar */
+      gap: 20px;  /* Ökar avståndet mellan korten */
     }
-
-    /* Förhindrar att bilderna blir för stora */
-    .wrapper img {
-        width: 100%; /* Bilden fyller hela grid-cellen */
-        height: auto;
+  
+    .item {
+      flex: 1 1 100%;  /* Gör att varje kort tar upp hela bredden på skärmen */
     }
-
-    /* Bilder i gridboxarna */
-    .wrapper img {
-        object-fit: cover; /* Beskär bilden så att den täcker hela utrymmet utan att förlora proportioner */
+  
+    h1 {
+      font-size: 28px;  /* Minskar textstorleken för små skärmar */
     }
-}
-
-/* För ännu mindre skärmar (max-width 480px) */
-@media (max-width: 480px) {
-    .wrapper {
-        grid-template-columns: 1fr; /* 1 kolumn för väldigt små skärmar */
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 22px;  /* Justera ytterligare för ännu mindre skärmar */
     }
-
-    .wrapper img {
-        width: 100%;
-        height: auto;
+  
+    .item p {
+      font-size: 10px;  /* Minskar fontstorleken på texten under bilderna */
     }
-
-    /* Justera gapet mellan bilder på små enheter */
-    .wrapper {
-        grid-gap: 5px;
-    }
-}
-
-/* Gridboxar */
-.wrapper div {
-    border: 3px solid rgb(78, 68, 219);
-    border-radius: 10px;
-    display:flex;
-}
-
-/* Bilder i gridboxarna */
-.wrapper img {
-    width: 100%; /* Bilden fyller hela grid-cellen */
-    height: 100%; /* Bilden fyller hela höjden av sin cell */
-    object-fit: cover; /* Beskär bilden så att den täcker hela utrymmet utan att förlora proportioner */
-    border-radius: 10px; /* Rundade hörn om du vill ha det */
-}
+  }
