@@ -1,0 +1,85 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  background-color: wheat;
+  color: #FFFFFF;
+  font-family: 'Montserrat';
+  margin-top: 10px;
+}
+
+header {
+  background-image: linear-gradient(rgba(211, 202, 121, 0.5), rgba(0, 0, 0, 0.5)), url("https://64.media.tumblr.com/bea9bf33d176b34345afa82bf20bdf20/tumblr_onxp28pqlh1qcdynfo1_540.jpg");
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+section {
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  h1 {
+    text-align: center;
+    font-weight: 200;
+    font-size: 36px;
+    margin-bottom: 3rem;
+  }
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;  
+}
+
+.item {
+    text-align: center;
+    flex: 1 1 300px; 
+    margin-bottom: 20px;
+}
+
+.item img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 8px;
+}
+
+.item p {
+    font-size: 12px;
+    color: darkslateblue;
+    margin-top: 10px;
+}
+@media (max-width: 768px) {
+    .card-container {
+      flex-direction: column;  /* Gör så att korten staplas vertikalt på små skärmar */
+      gap: 20px;  /* Ökar avståndet mellan korten */
+    }
+  
+    .item {
+      flex: 1 1 100%;  /* Gör att varje kort tar upp hela bredden på skärmen */
+    }
+  
+    h1 {
+      font-size: 28px;  /* Minskar textstorleken för små skärmar */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 22px;  /* Justera ytterligare för ännu mindre skärmar */
+    }
+  
+    .item p {
+      font-size: 10px;  /* Minskar fontstorleken på texten under bilderna */
+    }
+  }
