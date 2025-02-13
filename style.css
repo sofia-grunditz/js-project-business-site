@@ -1,9 +1,8 @@
 /* Grundläggande stilar */
-
 body, html {
   height: 100%;
   margin: 0;
-  font-family: 'cinzel', sans-serif;
+  font-family: 'Cinzel', sans-serif;
 }
 
 body {
@@ -12,7 +11,7 @@ body {
 }
 
 header.hero-image {
-  background-image: linear-gradient(rgba(60, 42, 23, 0.5), rgba(64, 44, 25, 0.5)), url("https://64.media.tumblr.com/b230f1d4a810bfa4734e183e99c2e9c6/tumblr_odczhpNkmw1qcdynfo1_1280.jpg");
+  background-image: linear-gradient(rgba(60, 42, 23, 0.5), rgba(64, 44, 25, 0.5)), url("images/jan_logos.png");
   height: 50vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -29,18 +28,25 @@ header.hero-image {
   color: #FFFFFF; /* White text for better contrast */
 }
 
-
 section {
   margin: 0 auto;
   padding: 2rem;
 }
 
 h1 {
-  text-align: left;
+  text-align: center;
   font-weight: 200;
-  font-size: 36px;
+  font-size: 72px;
+  font-style: bold;
+  font-family: cinzel;
   margin-bottom: 3rem;
-  color: #CB8183; /* Soft peach for main heading */
+  color: #762dd6; /* Soft peach for main heading */
+}
+
+h2 {
+  font-size: 22px;
+  color: #1c2630;
+  text-align: center;
 }
 
 /* Container för bilder */
@@ -66,10 +72,11 @@ h1 {
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  overflow: hidden; /* Lägg till detta */
+  overflow: hidden;
 }
 
 .item img {
+  object-fit: auto;
   max-width: 100%; 
   height: auto;
   border-radius: 5px;
@@ -170,6 +177,11 @@ button:hover {
     font-size: 22px;
   }
 
+  h2 {
+    font-size: 18px;
+    color: #0056b3;
+  }
+
   .item p {
     font-size: 12px; /* Gör texten större på små skärmar */
   }
@@ -201,4 +213,19 @@ input:focus {
 button:hover {
   background-color: #0056b3;
   transition: background-color 0.3s ease;
+}
+
+/* Stilar för footern och videon */
+footer {
+  color: #1c2630;
+  position: relative;
+  width: 100%;
+  height: 300px; /* Justera höjden efter behov */
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
