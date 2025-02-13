@@ -1,31 +1,34 @@
 /* Grundläggande stilar */
-body, html {
-  height: 100%;
+* {
   margin: 0;
-  font-family: 'Cinzel', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-  background-color: #AA6970; 
-  color: #AA6970; /* Light warm pink for text */
+html, body {
+  height: 100%;
+  font-family: 'Cinzel', sans-serif;
+  background-color: #FFFFFF;
+  color: #751357;
 }
 
 header.hero-image {
-  background-image: linear-gradient(rgba(60, 42, 23, 0.5), rgba(64, 44, 25, 0.5)), url("images/jan_logos.png");
-  height: 50vh;
+  background-image: linear-gradient(to top, rgba(217, 230, 235, 0.966) 0%, rgba(70, 130, 180, 0.5) 0%, rgba(171, 215, 252, 0.5) 0%), url("images/logo1.png");
+  height: 68vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  padding: 20px;
 }
 
 .hero-text {
-  text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #FFFFFF; /* White text for better contrast */
+  text-align: left;
+  color: #FFFFFF;
 }
 
 section {
@@ -34,85 +37,82 @@ section {
 }
 
 h1 {
-  text-align: center;
-  font-weight: 200;
   font-size: 72px;
-  font-style: bold;
-  font-family: cinzel;
+  font-weight: 200;
+  font-family: 'Cinzel', sans-serif;
+  text-align: center;
   margin-bottom: 3rem;
-  color: #762dd6; /* Soft peach for main heading */
+  color: #751357;
 }
 
 h2 {
-  font-size: 22px;
+  font-size: 48px;
   color: #1c2630;
   text-align: center;
 }
 
+p {
+  font-weight: bold;
+  font-size: 48px;
+  text-align: start;
+}
 /* Container för bilder */
 .image-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Standard: 3 kolumner */
-  gap: 2.5%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1%;
   margin: 115px 5% 8% 5%;
   justify-items: center;
   align-items: start;
-  z-index: 2;
-  background-color: #AA6970; /* Rosa bakgrund som matchar den övergripande sidan */
+  background-color: #e6d1f2;
 }
 
 .item {
-  background: #FAF9F8; /* Light beige for image cards */
-  padding: 20px; 
-  border-radius: 10px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: #FAF9F8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 100%; 
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-sizing: border-box;
-  overflow: hidden;
 }
 
 .item img {
-  object-fit: auto;
-  max-width: 100%; 
+  width: 100%;
   height: auto;
   border-radius: 5px;
 }
 
 .item p {
   font-size: 14px;
-  color: #76585E; /* Muted brown for text */
+  color: #76585E;
   margin-top: 10px;
 }
 
-/* Formulär Styling */
+/* Formulär styling */
 .form-container {
   max-width: 600px;
   margin: 3rem auto;
   padding: 2rem;
   text-align: center;
-  background-color: #FFFFFF; /* White background for the form */
+  background-color: #FFFFFF;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  clear: both; /* Se till att formuläret inte överlappar bilderna */
-  z-index: 1;
-  position: relative;
 }
 
-.form-container h1 {
+.form-container h2 {
   font-size: 28px;
   margin-bottom: 2rem;
-  color: #CB8183; /* Soft peach for form heading */
+  color: 751357;
 }
 
 label {
   display: block;
   margin: 1rem 0 0.3rem;
   font-weight: bold;
-  color: #C6A1A7; /* Light lavender for labels */
+  color: #751357;
 }
 
 input[type="text"],
@@ -124,7 +124,7 @@ button {
   padding: 0.8rem;
   margin: 0.5rem 0;
   font-size: 1rem;
-  border: 1px solid #76585E; /* Muted brown border for input fields */
+  border: 1px solid #76585E;
   border-radius: 4px;
 }
 
@@ -135,14 +135,14 @@ input[type="checkbox"] {
 }
 
 button {
-  background-color: #CB8183; /* Soft peach button background */
+  background-color: #751357;
   color: white;
   cursor: pointer;
   font-size: 1.1rem;
 }
 
 button:hover {
-  background-color: #B17981; /* Soft pink for button hover effect */
+  background-color: #d190c8;
 }
 
 /* Responsiv design för formuläret */
@@ -159,16 +159,16 @@ button:hover {
 /* Responsiv design för bilder */
 @media (max-width: 1024px) {
   .image-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 kolumner för skärmar mellan 1024px och 768px */
-    margin-bottom: 20px; /* Lägg till extra marginal längst ned */
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 20px;
   }
 }
 
 @media (max-width: 768px) {
   .image-container {
-    grid-template-columns: 1fr; /* 1 kolumn för skärmar under 768px */
+    grid-template-columns: 1fr;
     padding-bottom: 30px;
-    margin-bottom: 20px; /* Lägg till extra marginal längst ned */
+    margin-bottom: 20px;
   }
 }
 
@@ -178,40 +178,33 @@ button:hover {
   }
 
   h2 {
-    font-size: 18px;
+    font-size: 12px;
     color: #0056b3;
   }
 
   .item p {
-    font-size: 12px; /* Gör texten större på små skärmar */
+    font-size: 12px;
   }
 
   .form-container {
     padding: 1rem;
-    width: 100%; /* Gör formuläret fullt responsivt */
+    width: 100%;
   }
 
   .form-container h1 {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 
-/* Se till att sista bilden stannar i sin container */
-.item:nth-child(5), .item:nth-child(6) {
-  margin-bottom: 20px; /* Lägg till marginal längst ned */
-  position: relative;
-  z-index: 2;
-}
-
+/* Fokusstil för input-fält */
 input:focus {
   border-color: #007bff;
   outline: none;
   background-color: #f0f8ff;
 }
 
-/* Button hover effect */
+/* Hover effect på knapp */
 button:hover {
-  background-color: #0056b3;
   transition: background-color 0.3s ease;
 }
 
@@ -220,11 +213,11 @@ footer {
   color: #1c2630;
   position: relative;
   width: 100%;
-  height: 300px; /* Justera höjden efter behov */
+  height: 300px;
   overflow: hidden;
 }
 
-video {
+footer video {
   width: 100%;
   height: 100%;
   object-fit: contain;
