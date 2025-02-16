@@ -1,229 +1,148 @@
-/* Grundläggande stilar */
-* {
+body {
   margin: 0;
-  padding: 0;
+  width: 100dvw;
+    height: 100dvh;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+}
+
+* {
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  font-family: 'Cinzel', sans-serif;
-  background-color: #FFFFFF;
-  color: #751357;
-}
-
-header.hero-image {
-  background-image: linear-gradient(to top, rgba(217, 230, 235, 0.966) 0%, rgba(70, 130, 180, 0.5) 0%, rgba(171, 215, 252, 0.5) 0%), url("images/logo1.png");
-  height: 68vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  padding: 20px;
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: left;
-  color: #FFFFFF;
-}
-
-section {
-  margin: 0 auto;
-  padding: 2rem;
-}
-
 h1 {
-  font-size: 72px;
-  font-weight: 200;
-  font-family: 'Cinzel', sans-serif;
-  text-align: center;
-  margin-bottom: 3rem;
-  color: #751357;
+  margin: 0;
 }
 
-h2 {
-  font-size: 48px;
-  color: #1c2630;
-  text-align: center;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  padding: 1rem 1rem;
+  background-color: #22a6b3
 }
 
-p {
-  font-weight: bold;
-  font-size: 48px;
-  text-align: start;
-}
-/* Container för bilder */
-.image-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  gap: 1%;
-  margin: 115px 5% 8% 5%;
-  justify-items: center;
-  align-items: start;
-  background-color: #e6d1f2;
-}
-
-.image-container h2 {
-  grid-column: 1/-1;
-}
-
-.item {
-  background-color: #FAF9F8;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 100%;
+.header-menu-button {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  appearance: none;
+    border: solid thin #999;
+  border-radius: 5px;
+  padding: 4px 8px;
+    cursor: pointer;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.item img {
+.header-menu-button:hover {
+  background-color: aqua;
+}
+
+.header-menu-button svg {
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+header nav {
+  display: none;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+}
+
+header nav ul li {
+  padding: 8px 16px;
+  border: solid thin #dfdfdf79;
+  border-radius: 5px;
+  background-color: #7ed6df;
+  color: #ffffff;
+}
+
+header nav ul li a {
+  text-decoration-line: none;
+}
+
+main {
+  display: block;
+  width: 100dvw;
+  height: 100%;
+  overflow: auto;
+}
+
+.hero-image {}
+
+.hero-image img {
   width: 100%;
-  height: auto;
+}
+
+;
+
+.category {
+  padding: 8px 16px;
+}
+
+.items-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.items-container .item {
+  padding: 16px 16px;
+  background-color: #30336b;
+  color: #ffffff;
   border-radius: 5px;
 }
 
-.item p {
-  font-size: 14px;
-  color: #76585E;
-  margin-top: 10px;
-}
-
-/* Formulär styling */
-.form-container {
-  max-width: 600px;
-  margin: 3rem auto;
-  padding: 2rem;
-  text-align: center;
-  background-color: #FFFFFF;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.form-container h2 {
-  font-size: 28px;
-  margin-bottom: 2rem;
-  color: 751357;
-}
-
-label {
-  display: block;
-  margin: 1rem 0 0.3rem;
-  font-weight: bold;
-  color: #751357;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="radio"],
-input[type="checkbox"],
-button {
+.items-container .item img {
   width: 100%;
-  padding: 0.8rem;
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  border: 1px solid #76585E;
-  border-radius: 4px;
+  background-color: white;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-  width: auto;
-  margin-right: 0.5rem;
+.items-container .item p {
+  margin: 0;
+  font-size: 1.5em;
+  padding: 4px 0;
 }
 
-button {
-  background-color: #751357;
-  color: white;
-  cursor: pointer;
-  font-size: 1.1rem;
+.items-container .item form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-button:hover {
-  background-color: #d190c8;
-}
-
-/* Responsiv design för formuläret */
-@media (max-width: 768px) {
-  .form-container {
-    padding: 1rem;
+/* Media queries för att göra responsiv */
+/* tablets and laptops */
+@media screen and (min-width:756px) {
+  .items-container {
+    grid-template-columns: 1fr 1fr;
   }
 
-  button {
-    font-size: 1rem;
-  }
+    .header-menu-button {
+      display: none;
+    }
+
+    header nav {
+      display: flex;
+    }
+
+    main {
+      padding: 0 16px;
+    }
 }
 
-/* Responsiv design för bilder */
-@media (max-width: 1024px) {
-  .image-container {
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 20px;
+/*
+      Computers 
+      */
+@media screen and (min-width:1024px) {
+  .items-container {
+    grid-template-columns: 1fr 1fr 1fr;
   }
-}
-
-@media (max-width: 768px) {
-  .image-container {
-    grid-template-columns: 1fr;
-    padding-bottom: 30px;
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 22px;
-  }
-
-  h2 {
-    font-size: 12px;
-    color: #0056b3;
-  }
-
-  .item p {
-    font-size: 12px;
-  }
-
-  .form-container {
-    padding: 1rem;
-    width: 100%;
-  }
-
-  .form-container h1 {
-    font-size: 22px;
-  }
-}
-
-/* Fokusstil för input-fält */
-input:focus {
-  border-color: #007bff;
-  outline: none;
-  background-color: #f0f8ff;
-}
-
-/* Hover effect på knapp */
-button:hover {
-  transition: background-color 0.3s ease;
-}
-
-/* Stilar för footern och videon */
-footer {
-  color: #1c2630;
-  position: relative;
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-}
-
-footer video {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
