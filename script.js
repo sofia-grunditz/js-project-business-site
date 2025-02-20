@@ -1,13 +1,15 @@
-document.getElementById('menu-button').addEventListener('click', function() {
-  const menu = document.getElementById('navbar');
-  menu.classList.toggle('show'); // Toggles visibility of the menu
+// Hämta referenser till de element vi behöver
+const menuButton = document.getElementById('menu-button');  // Menyknapp
+const navbardialog = document.querySelector("#navbardialog");  // Dialogruta
+
+// Lägg till eventlyssnare för att öppna dialogrutan när menyknapp klickas
+menuButton.addEventListener('click', function () {
+  navbardialog.showModal();  // Öppnar dialogrutan
 });
 
-// Close the menu if clicked outside (optional)
-window.addEventListener('click', function(event) {
-  const navbar = document.getElementById('navbar');
-  const menuButton = document.getElementById('menu-button');
-  if (!navbar.contains(event.target) && !menuButton.contains(event.target)) {
-    navbar.classList.remove('show');
+// Lägg till eventlyssnare för att stänga dialogrutan när användaren klickar på bakgrunden
+navbardialog.addEventListener('click', function (event) {
+  if (event.target === this) {
+    navbardialog.close();  // Stänger dialogrutan
   }
 });
