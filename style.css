@@ -1,8 +1,8 @@
 body {
   margin: 0;
   width: 100dvw;
-  height: 100dvh;
-  overflow: hidden;
+  height: auto;
+  overflow: auto;
   display: grid;
   grid-template-rows: min-content 1fr;
   font-family: cinzel;
@@ -89,16 +89,45 @@ header nav ul li a {
 main {
   display: block;
   width: 100dvw;
-  height: 100%;
+  height: auto;
+  /* Ensure main can grow with content */
   overflow: auto;
 }
 
 .hero-image {
+  position: relative;
   width: 100%;
+  height: 60vh;
+  /* Justera höjden efter behov */
+  background-image: url("/images/spearheadbanner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  /* Sätt en lägre z-index för att ligga under headern */
 }
 
-.hero-image img {
-  width: 100%;
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  /* Halvtransparent bakgrund */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero-text h2 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.hero-text p {
+  margin: 0;
+  font-size: 1.2em;
 }
 
 .category {
