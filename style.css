@@ -32,69 +32,48 @@ header {
   background-color: #686de0;
 }
 
-.header-menu-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  appearance: none;
-  border: solid thin #999;
-  border-radius: 5px;
-  padding: 8px 16px;
+
+
+.hamburger-button {
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  color: white;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-  font-size: 24px;
-  font-weight: bold;
-  background-color: #30336b;
-  color: #ffffff;
 }
 
-.header-menu-button:hover {
-  background-color: #8ec0da;
-}
-
-header nav {
-  display: none;
-}
-
-header nav ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 0;
+nav {
+  position: absolute;
+  top: 60px;
+  left: 0;
   width: 100%;
-  margin: 0;
+  background-color: #444;
   text-align: center;
-  box-sizing: border-box;
 }
 
-header nav ul li {
-  padding: 8px 16px;
-  border-radius: 5px;
-  background-color: #30336b;
-  color: #ffffff;
-  width: 100%;
-  box-sizing: border-box;
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-header nav ul li a {
-  text-decoration-line: none;
-  color: #686de0;
+nav ul li {
+  padding: 10px 0;
 }
 
-#navbar.show {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
 }
 
 main {
   display: block;
   width: 100dvw;
   height: auto;
-  /* Ensure main can grow with content */
   overflow: auto;
 }
 
@@ -241,36 +220,27 @@ footer a:hover {
     grid-template-columns: 1fr 1fr;
   }
 
-  .header-menu-button {
-    display: none;
-  }
+  @media screen and (min-width: 768px) {
+    .hamburger-button {
+      display: none;
+    }
 
-  header nav {
-    display: block;
-  }
+    nav {
+      display: flex !important;
+      position: static;
+      flex-direction: row;
+      justify-content: flex-end;
+      background-color: #686de0;
+    }
 
-  header nav ul {
-    flex-direction: row;
-    justify-content: flex-end;
-  }
+    nav ul {
+      flex-direction: row;
+      gap: 16px;
+    }
 
-  header h1 {
-    font-size: 3em;
-  }
-
-  header nav ul li {
-    padding: 8px 16px;
-    border-radius: 5px;
-    width: auto;
-    align-items: end;
-  }
-
-  #navbar.show {
-    display: block;
-  }
-
-  main {
-    padding: 0 16px;
+    nav ul li {
+      padding: 0 16px;
+    }
   }
 }
 
